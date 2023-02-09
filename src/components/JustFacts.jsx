@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const JustFacts = () => {
-  const [catFact, setCatFact] = useState(null);
+  const [catFact, setCatFact] = useState();
 
   useEffect(() => {
     const fetchData = async () => {

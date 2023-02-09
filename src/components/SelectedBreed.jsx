@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 const SelectedBreed = () => {
-  const [data, setData] = useState([]);
   const { breed } = useParams();
   const [selectedBreed, setSelectedBreed] = useState({});
 
@@ -10,7 +9,6 @@ const SelectedBreed = () => {
     fetch('https://catfact.ninja/breeds')
       .then(response => response.json())
       .then(json => {
-        setData(json.data);
         const selected = json.data.find(breedData => breedData.breed.toLowerCase() === breed.toLowerCase());
         console.log('Selected breed:', selected);
         setSelectedBreed(selected);

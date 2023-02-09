@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 const BreedsAndFacts = () => {
-  const [data, setData] = useState({});
   const [firstBreed, setFirstBreed] = useState('');
   const [catFact, setCatFact] = useState(null);
   
@@ -19,8 +18,7 @@ const BreedsAndFacts = () => {
     fetch('https://catfact.ninja/breeds')
       .then(response => response.json())
       .then(json => {
-        setFirstBreed(json);
-        setFirstBreed(json.data[0].breed);
+        setFirstBreed(json.data[Math.floor(Math.random() * json.data.length)].breed);
       });
   }, []);
 

@@ -8,6 +8,7 @@ import Home from './Home'
 import Persisting from './Persisting'
 import BreedInfo from './BreedInfo'
 import SelectedBreed from './SelectedBreed'
+import TestsComponent from './TestsComponent'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import '../App.css'
 
@@ -25,6 +26,7 @@ const App = () =>{
             <Route path='/onebreed' element={<OneBreed />}/>
             <Route path='/percisting' element={<Persisting />}/>
             <Route path='/breedinfo' element={<BreedInfo />}/>
+            <Route path='/tests' element={<TestsComponent />}/>
             <Route path='/selectedbreed/:breed' element={<SelectedBreed />}/>
         </Routes>
     </BrowserRouter>

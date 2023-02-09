@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
 const BreedInfo = () => {
-    const [data, setData] = useState([]);
     const [randomBreed, setRandomBreed] = useState({});
   
     useEffect(() => {
       fetch('https://catfact.ninja/breeds')
         .then(response => response.json())
         .then(json => {
-          setData(json.data);
           setRandomBreed(json.data[Math.floor(Math.random() * json.data.length)]);
         });
     }, []);

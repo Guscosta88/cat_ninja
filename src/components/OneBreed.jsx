@@ -7,7 +7,6 @@ const OneBreed = () => {
     fetch('https://catfact.ninja/breeds')
       .then(response => response.json())
       .then(json => {
-        setFirstBreed(json);
         setFirstBreed(json.data[Math.floor(Math.random() * json.data.length)].breed);
       });
   }, []);
